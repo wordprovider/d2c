@@ -6,4 +6,14 @@
 
 <xsl:output method="text" indent="no"/>
 
+<xsl:template match="map">
+
+\input tex/setup.tex
+
+\starttext
+Wahay!
+\stoptext
+
+</xsl:template>
+
 </xsl:stylesheet>
