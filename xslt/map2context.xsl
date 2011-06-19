@@ -6,13 +6,22 @@
 
 <xsl:output method="text" indent="no"/>
 
+<xsl:include href="variables.xsl"/>
+
 <xsl:template match="map">
 
-\input tex/setup.tex
+  <!-- Initial setup -->
+  <xsl:text>\input tex/setup.tex</xsl:text>
+  <xsl:value-of select="$newline"/>
+  <xsl:text>\starttext</xsl:text>
+  <xsl:value-of select="$newline"/>
+  
+  <!-- Title page -->
 
-\starttext
-Wahay!
-\stoptext
+  <xsl:text>Wahay!</xsl:text>
+
+  <xsl:value-of select="$newline"/>
+  <xsl:text>\stoptext</xsl:text>
 
 </xsl:template>
 
