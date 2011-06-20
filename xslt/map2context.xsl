@@ -7,6 +7,7 @@
 <xsl:output method="text" indent="no"/>
 
 <xsl:include href="variables.xsl"/>
+<xsl:include href="titlepage.xsl"/>
 
 <xsl:template match="map">
 
@@ -17,8 +18,10 @@
   <xsl:value-of select="$newline"/>
   
   <!-- Title page -->
+  <xsl:apply-templates select="title"/>
 
-  <xsl:text>Wahay!</xsl:text>
+
+ 
 
   <xsl:value-of select="$newline"/>
   <xsl:text>\stoptext</xsl:text>
