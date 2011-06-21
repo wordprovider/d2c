@@ -12,7 +12,7 @@
 <xsl:template match="map">
 
   <!-- Initial setup -->
-\input tex/setup.tex
+\input input/setup.tex
 
 \starttext
 
