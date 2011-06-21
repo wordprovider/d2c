@@ -5,30 +5,39 @@
 	xmlns="http://www.w3.org/1999/xhtml">
 
 <xsl:output method="text" indent="no"/>
+<xsl:strip-space elements="*"/>
 
 <xsl:template match="title">
 
-  <xsl:text>\dontleavehmode</xsl:text>
-  <xsl:value-of select="$newline"/>
-  <xsl:text>\blank[6cm]</xsl:text>
-  <xsl:value-of select="$newline"/>
-  <xsl:text>\startalignment[center]</xsl:text>
-  <xsl:value-of select="$newline"/>
-  <xsl:text>\ssd </xsl:text><xsl:value-of select="."/><xsl:text> \par </xsl:text>
-  <xsl:value-of select="$newline"/>
+% Background layer with image
+\definelayer[titlepagebackground]
+            [
+             x=0mm,
+             y=0mm,
+             width=\paperwidth,
+             height=\paperheight
+            ]
+
+% Activate the background for the title page 
+\setupbackgrounds[page][titlepagebackground]
+
+\dontleavehmode
+\blank[6cm]
+\startalignment[center]
+\ssd <xsl:value-of select="."/> \par
 
   <xsl:apply-templates select="../topicmeta"/>
- 
-  <xsl:text>\stopalignment</xsl:text>
-  <xsl:value-of select="$newline"/>
-  <xsl:text>\page</xsl:text>
-  <xsl:value-of select="$newline"/>
+
+\stopalignment
+\page
+
+ <xsl:value-of select="$newline"/>
 
 </xsl:template>  
 
 <xsl:template match="topicmeta">
 
-  <xsl:text>\ssc Version </xsl:text><xsl:value-of select="prodinfo/vrmlist/vrm/@version"/> 
+\ssc Version <xsl:value-of select="prodinfo/vrmlist/vrm/@version"/> 
 <xsl:value-of select="$newline"/>
 
 </xsl:template>

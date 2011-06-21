@@ -12,19 +12,16 @@
 <xsl:template match="map">
 
   <!-- Initial setup -->
-  <xsl:text>\input tex/setup.tex</xsl:text>
-  <xsl:value-of select="$newline"/>
-  <xsl:text>\starttext</xsl:text>
+\input tex/setup.tex
+
+\starttext
+
   <xsl:value-of select="$newline"/>
   
   <!-- Title page -->
   <xsl:apply-templates select="title"/>
 
-
- 
-
-  <xsl:value-of select="$newline"/>
-  <xsl:text>\stoptext</xsl:text>
+\stoptext
 
 </xsl:template>
 
