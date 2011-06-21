@@ -9,14 +9,8 @@
 
 <xsl:template match="title">
 
-% Background layer with image
-\definelayer[titlepagebackground]
-            [
-             x=0mm,
-             y=0mm,
-             width=\paperwidth,
-             height=\paperheight
-            ]
+\input tex/titlepage.tex
+
 
 % Activate the background for the title page 
 \setupbackgrounds[page][titlepagebackground]
@@ -24,7 +18,7 @@
 \dontleavehmode
 \blank[6cm]
 \startalignment[center]
-\ssd <xsl:value-of select="."/> \par
+\ssd <!-- guide title: --> <xsl:value-of select="."/> \par
 
   <xsl:apply-templates select="../topicmeta"/>
 
