@@ -11,6 +11,8 @@ output
   images
   tex
 tex
+  input
+  teximages
 xslt
 
 folder: <ditafiles-folder> 
@@ -19,11 +21,23 @@ folder: <ditafiles-folder>
 
 folder: output 
 - Contains the output of ConTeXT - out.tex - and the PDF - out.pdf.
-- Contains a symlink to the images subfolder of the DITA source. XSLT transforms assume "image/filename" in the generated TeX output.
-- Contains a symlink to the "tex" folder (see below).
+
+- Contains a symlink to the "images" subfolder of the DITA source. XSLT transforms write "images/filename" in the generated TeX because they are picking up the image location from the href attribute in the DITA source.
+ 
+- Contains a symlink to the "tex/input" folder (see below).
+
+- Contains a symlink to the "tex/teximages" folder (see below).
 
 folder: tex
-- TeX input files. XSLT transforms assume tex/<input-file>.tex
+
+-Top-level folder for files relating to TeX processing
+
+folder: tex/input
+- TeX input files. XSLT transforms assume input/<input-file>.tex
+
+folder tex/teximages
+
+  - Images specific to TeX processing that don't appear in the DITA, e.g. - title page graphic.
 
 folder: xslt
 - The XSLT transform files. See "XSLT structure" below.

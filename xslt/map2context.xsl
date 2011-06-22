@@ -10,14 +10,10 @@
 <xsl:include href="titlepage.xsl"/>
 
 <xsl:template match="map">
-
   <!-- Initial setup -->
 \input input/setup.tex
-
 \starttext
 
-  <xsl:value-of select="$newline"/>
-  
   <!-- Title page -->
   <xsl:apply-templates select="title"/>
 
