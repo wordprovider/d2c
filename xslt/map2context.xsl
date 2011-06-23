@@ -11,19 +11,22 @@
 <xsl:include href="titlepage.xsl"/>
 <xsl:include href="body.xsl"/>
 
-<xsl:template match="map">
+<xsl:template match="bookmap">
   <!-- Initial setup -->
 \input input/setup.tex
 \starttext
 
   <!-- Title page -->
-  <xsl:apply-templates select="title" mode="titlepage"/>
+  <xsl:apply-templates select="booktitle"/>
 
   <!-- Frontmatter -->
-  <xsl:apply-templates select="topicgroup[@type='frontmatter']"/>
+  <xsl:apply-templates select="frontmatter"/>
 
   <!-- Body text -->
-  <xsl:apply-templates select="topichead"/>
+
+\input input/body.tex
+ 
+  <xsl:apply-templates select="chapter"/>
 
 \stoptext
 

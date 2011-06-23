@@ -6,7 +6,7 @@
 
 <xsl:output method="text" indent="no"/>
 
-<xsl:template match="topicgroup[@type='frontmatter']">
+<xsl:template match="frontmatter">
 
 
 

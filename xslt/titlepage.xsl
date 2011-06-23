@@ -6,7 +6,7 @@
 
 <xsl:output method="text" indent="no"/>
 
-<xsl:template match="title" mode="titlepage">
+<xsl:template match="booktitle">
 
 
 
@@ -20,7 +20,7 @@
 \ssd <!-- guide title: --> <xsl:value-of select="."/> \par
 \blank[4cm]
 
-  <xsl:apply-templates select="../topicmeta"/>
+  <xsl:apply-templates select="../bookmeta"/>
 
 \stopalignment
 \page
@@ -29,7 +29,7 @@
 
 </xsl:template>  
 
-<xsl:template match="topicmeta">
+<xsl:template match="bookmeta">
 
 \ssc <xsl:value-of select="prodinfo/prodname"/> \par
 \blank[1cm]
