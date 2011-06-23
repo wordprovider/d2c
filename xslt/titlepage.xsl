@@ -5,9 +5,8 @@
 	xmlns="http://www.w3.org/1999/xhtml">
 
 <xsl:output method="text" indent="no"/>
-<xsl:strip-space elements="*"/>
 
-<xsl:template match="title">
+<xsl:template match="title" mode="titlepage">
 
 
 

@@ -7,8 +7,9 @@
 <xsl:output method="text" indent="no"/>
 
 <xsl:include href="variables.xsl"/>
-<xsl:include href="titlepage.xsl"/>
 <xsl:include href="frontmatter.xsl"/>
+<xsl:include href="titlepage.xsl"/>
+<xsl:include href="main.xsl"/>
 
 <xsl:template match="map">
   <!-- Initial setup -->
@@ -16,9 +17,13 @@
 \starttext
 
   <!-- Title page -->
-  <xsl:apply-templates select="title"/>
+  <xsl:apply-templates select="title" mode="titlepage"/>
 
+  <!-- Frontmatter -->
   <xsl:apply-templates select="topicgroup[@type='frontmatter']"/>
+
+  <!-- Main text -->
+  <xsl:apply-templates select="topichead"/>
 
 \stoptext
 
