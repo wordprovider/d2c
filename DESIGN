@@ -58,3 +58,17 @@ map2context.xsl
 - References variables in variables.xsl
 - Calls "titlepage.xsl" to set up titlepage
 
+
+DITAMAP/PDF organisation
+------------------------
+
+Any kind of grouping - chapter, section within chapter, etc. - must always be implemented using a <topichead> element. Don't use a <concept> for this purpose. IS THIS NECESSARY? 
+
+Levels (which can be either concepts or topicheads) begin at \Level1 (\Level2, \Level3...) beneath each chapter. Tasks always have the same \Task formatting.
+
+<topicgroup> types : "frontmatter", "backmatter"
+<topichead> types  : "chapter"
+<concept> type     : "concept"
+<task> type        : "type"
+
+

@@ -9,7 +9,7 @@
 <xsl:include href="variables.xsl"/>
 <xsl:include href="frontmatter.xsl"/>
 <xsl:include href="titlepage.xsl"/>
-<xsl:include href="main.xsl"/>
+<xsl:include href="body.xsl"/>
 
 <xsl:template match="map">
   <!-- Initial setup -->
@@ -22,7 +22,7 @@
   <!-- Frontmatter -->
   <xsl:apply-templates select="topicgroup[@type='frontmatter']"/>
 
-  <!-- Main text -->
+  <!-- Body text -->
   <xsl:apply-templates select="topichead"/>
 
 \stoptext
