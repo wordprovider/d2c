@@ -11,6 +11,8 @@
 <xsl:include href="titlepage.xsl"/>
 <xsl:include href="body.xsl"/>
 
+<xsl:template match="*"/>
+
 <xsl:template match="bookmap">
   <!-- Initial setup -->
 \input input/setup.tex
@@ -22,11 +24,13 @@
   <!-- Frontmatter -->
   <xsl:apply-templates select="frontmatter"/>
 
-  <!-- Body text -->
-
+  <!-- Body text. Because there is no equivalant top-level bodytext element in a bookmap, we have to include some text here, rather than keeping it all in the body.xsl file -->
+\startbodymatter
 \input input/body.tex
  
   <xsl:apply-templates select="chapter"/>
+
+\stopbodymatter
 
 \stoptext
 
