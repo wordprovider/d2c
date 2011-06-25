@@ -8,19 +8,24 @@
 
 <!--    
    The next few transforms build the hierarchy of levels.
+   \Chapter is the root level.
    Concepts and topichead headings are formatted according to their level.
    Tasks always have the same heading.
    This is implemented in body.tex as \HeadingLevel1, HeadingLevel2..., HeadingTask.
 
    Example:
 
-   topichead          level 1      \HeadingLevel1
-     concept          level 2      \HeadingLevel2
-     concept          level 2      \HeadingLevel2
-       concept        level 3      \HeadingLevel3
-     concept          level 2      \HeadingLevel2
-       task           [level 3]    \HeadingTask
-         concept      level 3      \HeadingLevel3
+   \Chapter
+     topichead          level 1      \HeadingLevel1
+       concept          level 2      \HeadingLevel2
+       topichead        level 2      \HeadingLevel2
+         concept        level 3      \HeadingLevel3 
+       concept          level 2      \HeadingLevel2
+         concept        level 3      \HeadingLevel4
+         task           [level 3]    \HeadingTask
+       concept          level 2      \HeadingLevel2
+       task             [level 2]    \HeadingTask
+         concept        level 3      \HeadingLevel3
 
 -->
 
