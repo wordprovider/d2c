@@ -11,12 +11,23 @@
 <xsl:include href="titlepage.xsl"/>
 <xsl:include href="body.xsl"/>
 
+<!-- 
+   The following imported stylesheets contain named templates which mainly contain Context setup code.
+   We use XSL instead of \input\*.tex because sometimes we need to mix in some XSL processing.
+-->
+<xsl:include href="setup-initial.xsl"/>
+<xsl:include href="setup-body.xsl"/>
+
+<!-- Start transforming! -->
+
 <xsl:template match="*"/>
 
 <xsl:template match="bookmap">
-  <!-- Initial setup -->
-\input input/setup.tex
+
 \starttext
+
+  <!-- Initial setup [in setup-initial.xsl] -->
+  <xsl:call-template name="initialsetup"/>
 
   <!-- Title page -->
   <xsl:apply-templates select="booktitle"/>
