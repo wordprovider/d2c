@@ -24,13 +24,11 @@
   <!-- Frontmatter -->
   <xsl:apply-templates select="frontmatter"/>
 
-  <!-- Body text. Because there is no equivalant top-level bodytext element in a bookmap, we have to include some text here, rather than keeping it all in the body.xsl file -->
-\startbodymatter
-\input input/body.tex
- 
-  <xsl:apply-templates select="chapter"/>
-
-\stopbodymatter
+  <!-- 
+      Body text. There is no equivalent DITA element, so we explicity call the "bodytext"
+      template. 
+   -->
+  <xsl:call-template name="bodytext"/>
 
 \stoptext
 
