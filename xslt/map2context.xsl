@@ -9,8 +9,8 @@
 <xsl:include href="variables.xsl"/>
 <xsl:include href="frontmatter.xsl"/>
 <xsl:include href="titlepage.xsl"/>
+<xsl:include href="headings.xsl"/>
 <xsl:include href="body.xsl"/>
-
 <xsl:template match="*"/>
 
 <xsl:template match="bookmap">
@@ -29,9 +29,5 @@
       template. 
    -->
   <xsl:call-template name="bodytext"/>
-
-\stoptext
-
-</xsl:template>
-
+  
 </xsl:stylesheet>
