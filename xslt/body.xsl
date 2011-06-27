@@ -8,7 +8,7 @@
 
 <!-- 
    Root template for body text processing.
-   Doesn't a have an equivalent in DITA so we created a "bodytext" template
+   Doesn't a have an equivalent in DITA so we created a "bodytext" template.
 -->
    
 <xsl:template name="bodytext">

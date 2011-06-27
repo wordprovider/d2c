@@ -41,6 +41,7 @@
 
 %%%% Chapter %%%%
 
+
 \def\MyChapterCommand#1#2% #1 is number, #2 is text
   {\framed[frame=off,bottomframe=on,topframe=on]
      {\vbox{\headtext{chapter} #1\blank#2}}} % \vbox is needed for \blank to work
@@ -50,6 +51,8 @@
 \setupheadtext[chapter=Chapter] % used by \headtext
 
 %%%% End Chapter %%%%
+
+
 
 
 

@@ -8,16 +8,21 @@
 
 <xsl:template match="booktitle">
 
+\setupcolors[state=start]
 
+\defineoverlay[WatermarkOverlay]
+              [{\framed[frame=off,foregroundcolor=gray]
+               {\scale[sx=12,sy=12]
+               {\rotate[rotation=20.0]{Draft}}}}]
 
-% Activate the background for the title page 
-% \setupbackgrounds[page][titlepagebackground]
+\setupbackgrounds[page][background=WatermarkOverlay]
+
 
 \setuppagenumbering[state=stop]
 \dontleavehmode
 \blank[6cm]
 \startalignment[center]
-\ssd <!-- guide title: --> <xsl:value-of select="."/> \par
+\ssd <!-- guide title: --> <xsl:value-of select="."/>  \par
 \blank[4cm]
 
   <xsl:apply-templates select="../bookmeta"/>
