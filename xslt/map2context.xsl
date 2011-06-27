@@ -29,5 +29,7 @@
       template. 
    -->
   <xsl:call-template name="bodytext"/>
+
+</xsl:template>
   
 </xsl:stylesheet>

@@ -11,10 +11,23 @@
 
 \startbodymatter
 \input input/body.tex
- 
+
+  <!--
+     Build the hierarchy of headings, starting at Chapter.
+     Hierarchy built in headings.xsl, headings defined in headings.tex.
+     headings.xsl calls the "prolog", "conbody" and "taskbody" templates, 
+     which bring us back to this file [see below].
+  -->
   <xsl:apply-templates select="chapter"/>
 
 \stopbodymatter
 
 </xsl:template>
+
+<xsl:template match="prolog">
+
+\CONTEXT
+
+</xsl:template>
+
 </xsl:stylesheet>
