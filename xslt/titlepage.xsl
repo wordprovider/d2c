@@ -6,9 +6,37 @@
 
 <xsl:output method="text" indent="no"/>
 
+
+<!-- 
+  Two approaches:
+    i.   Define TeX commands and do the work in titlepage.tex ["buildtitlepageintex"]
+    ii.  Do the work mainly in XSL ["buildtitlepageinxsl"]
+-->
 <xsl:template match="booktitle">
+  <xsl:call-template name="buildtitlepageintex"/>
+</xsl:template>
 
+<!-- Use TeX -->
 
+<xsl:template name="buildtitlepageintex">
+
+  <!-- Title -->
+  \def\wpGuideTitle{<xsl:value-of select="."/>}
+
+  <!-- Product name -->
+  \def\wpProductName{<xsl:value-of select="../bookmeta/prodinfo/prodname"/>}
+
+  <!-- Product version -->
+  \def\wpProductVersion{<xsl:value-of select="../bookmeta/prodinfo/vrmlist/vrm/@version"/>}
+
+  <!-- Build the title page! -->
+  \input input/titlepage.tex
+
+</xsl:template>
+
+<!-- Use XSL -->
+
+<xsl:template name="buildtitlepageinxsl">
 
 % Activate the background for the title page 
 % \setupbackgrounds[page][titlepagebackground]
