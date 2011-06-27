@@ -6,8 +6,35 @@
 
 <xsl:output method="text" indent="no"/>
 
-<xsl:template match="booktitle">
 
+<!-- 
+  Two approaches:
+    i.   Define TeX commands and do the work in titlepage.tex ["buildtitlepageintex"]
+    ii.  Do the work mainly in XSL ["buildtitlepageinxsl"]
+-->
+<xsl:template match="booktitle">
+  <xsl:call-template name="buildtitlepageintex"/>
+</xsl:template>
+
+<!-- Use TeX -->
+
+<xsl:template name="buildtitlepageintex">
+
+  <!-- Title -->
+  \def\wpGuideTitle{<xsl:value-of select="."/>}
+
+  <!-- Product name -->
+  \def\wpProductName{<xsl:value-of select="../bookmeta/prodinfo/prodname"/>}
+
+  <!-- Product version -->
+  \def\wpProductVersion{<xsl:value-of select="../bookmeta/prodinfo/vrmlist/vrm/@version"/>}
+
+  <!-- Build the title page! -->
+  \input input/titlepage.tex
+
+</xsl:template>
+
+<<<<<<< HEAD
 \setupcolors[state=start]
 
 \defineoverlay[WatermarkOverlay]
@@ -16,6 +43,11 @@
                {\rotate[rotation=20.0]{Draft}}}}]
 
 \setupbackgrounds[page][background=WatermarkOverlay]
+=======
+<!-- Use XSL -->
+
+<xsl:template name="buildtitlepageinxsl">
+>>>>>>> development
 
 
 \setuppagenumbering[state=stop]

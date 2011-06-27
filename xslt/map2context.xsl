@@ -9,12 +9,17 @@
 <xsl:include href="variables.xsl"/>
 <xsl:include href="frontmatter.xsl"/>
 <xsl:include href="titlepage.xsl"/>
+<xsl:include href="headings.xsl"/>
 <xsl:include href="body.xsl"/>
+<<<<<<< HEAD
 <xsl:include href="headings.xsl"/>
 <!-- Named templates [in form "setup-foo"] containing Context setup markup: -->
 <xsl:include href="setups.xsl"/>
 
 <!-- Start transforming! -->
+=======
+<xsl:template match="*"/>
+>>>>>>> development
 
 <xsl:template match="bookmap">
 
@@ -35,8 +40,6 @@
    -->
   <xsl:call-template name="bodytext"/>
 
-\stoptext
-
 </xsl:template>
-
+  
 </xsl:stylesheet>
