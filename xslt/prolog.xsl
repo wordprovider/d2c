@@ -37,6 +37,7 @@ wibble
   <xsl:value-of select="$newline"/> 
   <xsl:text>\index{</xsl:text>
   <xsl:value-of select="text()[1]"/>
+  <!-- Add the subentries -->
   <xsl:apply-templates select="indexterm" mode="sublevel"/>
   <xsl:text>}</xsl:text>
 
