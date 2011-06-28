@@ -11,32 +11,22 @@
 <xsl:include href="titlepage.xsl"/>
 <xsl:include href="headings.xsl"/>
 <xsl:include href="body.xsl"/>
-<<<<<<< HEAD
-<xsl:include href="headings.xsl"/>
-<!-- Named templates [in form "setup-foo"] containing Context setup markup: -->
-<xsl:include href="setups.xsl"/>
-
-<!-- Start transforming! -->
-=======
 <xsl:template match="*"/>
->>>>>>> development
 
 <xsl:template match="bookmap">
-
+  <!-- Initial setup -->
+\input input/setup.tex
 \starttext
 
-  <!-- Initial setup [in setup-initial.xsl] -->
-  <xsl:call-template name="setup-initial"/>
-
-  <!-- Title page [titlepage.xsl] -->
+  <!-- Title page -->
   <xsl:apply-templates select="booktitle"/>
 
-  <!-- Frontmatter [frontmatter.xsl] -->
+  <!-- Frontmatter -->
   <xsl:apply-templates select="frontmatter"/>
 
   <!-- 
       Body text. There is no equivalent DITA element, so we explicity call the "bodytext"
-      template [body.xsl]. 
+      template. 
    -->
   <xsl:call-template name="bodytext"/>
 
