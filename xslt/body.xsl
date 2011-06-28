@@ -15,8 +15,8 @@
   <!--
      Build the hierarchy of headings, starting at Chapter.
      Hierarchy built in headings.xsl, headings defined in headings.tex.
-     headings.xsl calls the "prolog", "conbody" and "taskbody" templates, 
-     which bring us back to this file [see below].
+     headings.xsl calls the "prolog", "conbody" and "taskbody" templates. 
+     Prolog processing is in prolog.xsl, the others are handled here.
   -->
   <xsl:apply-templates select="chapter"/>
 
