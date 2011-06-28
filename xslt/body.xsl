@@ -24,5 +24,17 @@
 
 </xsl:template>
 
+<xsl:template match="conbody">
+
+Concept text
+
+</xsl:template>
+
+
+<xsl:template match="taskbody">
+
+Task text
+
+</xsl:template>
 
 </xsl:stylesheet>
