@@ -25,16 +25,20 @@
 </xsl:template>
 
 <xsl:template match="conbody">
-
-Concept text
-
+  <xsl:apply-templates/>
 </xsl:template>
 
 
 <xsl:template match="taskbody">
 
-Task text
+  <xsl:apply-templates/>
 
+</xsl:template>
+
+
+
+<xsl:template match="data">
+ \type{<xsl:value-of select="."/>}
 </xsl:template>
 
 </xsl:stylesheet>

@@ -12,7 +12,6 @@
 <xsl:include href="headings.xsl"/>
 <xsl:include href="body.xsl"/>
 <xsl:include href="prolog.xsl"/>
-<xsl:template match="*"/>
 
 <xsl:template match="bookmap">
   <!-- Initial setup -->
