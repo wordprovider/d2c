@@ -24,10 +24,5 @@
 
 </xsl:template>
 
-<xsl:template match="prolog">
-
-\CONTEXT
-
-</xsl:template>
 
 </xsl:stylesheet>
