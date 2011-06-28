@@ -38,7 +38,7 @@
 
 
 <xsl:template match="data">
- \type{<xsl:value-of select="."/>}
+\type{<xsl:value-of select="."/>}
 </xsl:template>
 
 </xsl:stylesheet>

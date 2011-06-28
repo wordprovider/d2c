@@ -11,15 +11,6 @@ wibble
   <xsl:apply-templates/>
 </xsl:template>
 
-<!--
-    Doesn't work without the following template. Why? 
-    The default template should fire on "metadata", which then
-    calls "keywords".
--->
-<xsl:template match="metadata">
-  <xsl:apply-templates/>
-</xsl:template>
-
 
 <!-- 
   Build the index entries. Result:
