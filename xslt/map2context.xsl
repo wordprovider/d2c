@@ -13,13 +13,7 @@
 <xsl:include href="headings.xsl"/>
 <xsl:include href="prolog.xsl"/>
 
-<!--
-<xsl:template match="text()">
- <xsl:text>text :</xsl:text>
- <xsl:value-of select="."/>
- <xsl:text> :endtext</xsl:text>
-</xsl:template>
--->
+<xsl:strip-space elements="*"/>
 
 <xsl:template match="bookmap">
   <!-- Initial setup -->

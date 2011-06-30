@@ -38,10 +38,29 @@
     We use the <data> element to enclose text that needs to be
     escaped for TeX.
 -->
-<xsl:template match="data">\#</xsl:template>
+<xsl:template match="data">\<xsl:value-of select="."/></xsl:template>
 
+
+<!-- Paragraph -->
 <xsl:template match="p">
   <xsl:apply-templates/> \par
+</xsl:template>
+
+
+<!-- Menus -->
+<xsl:template match="menucascade">
+   <xsl:apply-templates select="uicontrol" mode="menucascade"/>
+</xsl:template>
+
+<!--  
+  Qualify with mode="menucascade" because there are none-menu uicontrols which
+  must be styled differently.
+-->
+<xsl:template match="uicontrol" mode="menucascade">
+  <xsl:text> {\bf </xsl:text><xsl:apply-templates/><xsl:text>} </xsl:text> 
+  <xsl:if test="position()&lt;last()">
+    <xsl:text> \wpMenuSeparator </xsl:text>
+  </xsl:if>
 </xsl:template>
 
 </xsl:stylesheet>

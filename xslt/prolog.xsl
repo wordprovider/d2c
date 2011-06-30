@@ -25,12 +25,13 @@
 
 <!-- Top-level entry: \index{subentries...} -->
 <xsl:template match="indexterm" mode="toplevel">
-  <xsl:value-of select="$newline"/> 
+  <xsl:value-of select="$newline"/>
   <xsl:text>\index{</xsl:text>
   <xsl:value-of select="text()[1]"/>
   <!-- Add the subentries -->
   <xsl:apply-templates select="indexterm" mode="sublevel"/>
   <xsl:text>}</xsl:text>
+  <xsl:value-of select="$newline"/> 
 </xsl:template>
 
 <!-- Sub-level entry: +[entrytext] -->
