@@ -9,9 +9,17 @@
 <xsl:include href="variables.xsl"/>
 <xsl:include href="frontmatter.xsl"/>
 <xsl:include href="titlepage.xsl"/>
-<xsl:include href="headings.xsl"/>
 <xsl:include href="body.xsl"/>
+<xsl:include href="headings.xsl"/>
 <xsl:include href="prolog.xsl"/>
+
+<!--
+<xsl:template match="text()">
+ <xsl:text>text :</xsl:text>
+ <xsl:value-of select="."/>
+ <xsl:text> :endtext</xsl:text>
+</xsl:template>
+-->
 
 <xsl:template match="bookmap">
   <!-- Initial setup -->
@@ -29,6 +37,8 @@
       template. 
    -->
   <xsl:call-template name="bodytext"/>
+
+\stoptext
 
 </xsl:template>
   

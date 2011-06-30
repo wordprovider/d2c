@@ -30,15 +30,18 @@
 
 
 <xsl:template match="taskbody">
-
   <xsl:apply-templates/>
-
 </xsl:template>
 
+<!-- 
+    A hack!
+    We use the <data> element to enclose text that needs to be
+    escaped for TeX.
+-->
+<xsl:template match="data">\#</xsl:template>
 
-
-<xsl:template match="data">
-\type{<xsl:value-of select="."/>}
+<xsl:template match="p">
+  <xsl:apply-templates/> \par
 </xsl:template>
 
 </xsl:stylesheet>

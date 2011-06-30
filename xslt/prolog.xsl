@@ -7,7 +7,6 @@
 <xsl:output method="text" indent="no"/>
 
 <xsl:template match="prolog">
-wibble
   <xsl:apply-templates/>
 </xsl:template>
 
@@ -32,7 +31,6 @@ wibble
   <!-- Add the subentries -->
   <xsl:apply-templates select="indexterm" mode="sublevel"/>
   <xsl:text>}</xsl:text>
-
 </xsl:template>
 
 <!-- Sub-level entry: +[entrytext] -->
