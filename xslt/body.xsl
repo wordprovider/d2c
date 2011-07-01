@@ -63,4 +63,21 @@
   </xsl:if>
 </xsl:template>
 
+<!--
+
+Tried to implement the menu with TeX commands:
+
+<xsl:template match="uicontrol" mode="menucascade">
+  <xsl:choose>
+    <xsl:when test="position()&lt;last()">
+\wpMenuItem {<xsl:apply-templates/>}<xsl:text/>
+    </xsl:when>
+    <xsl:otherwise>
+\wpMenuItemLast {<xsl:apply-templates/>} <xsl:value-of select="$newline"/> 
+    </xsl:otherwise>
+  </xsl:choose> 
+</xsl:template>>
+
+-->
+
 </xsl:stylesheet>
