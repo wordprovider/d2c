@@ -10,8 +10,9 @@
 <xsl:include href="frontmatter.xsl"/>
 <xsl:include href="titlepage.xsl"/>
 <xsl:include href="body.xsl"/>
-<xsl:include href="headings.xsl"/>
 <xsl:include href="prolog.xsl"/>
+<xsl:include href="headings.xsl"/>
+
 
 <xsl:strip-space elements="*"/>
 
