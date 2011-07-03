@@ -41,7 +41,7 @@
 
 <xsl:template match="p" mode="frontmatter">
 
-  <xsl:value-of select="."/> 
+ <xsl:value-of select="."/> 
   <xsl:value-of select="$newline"/>
 
 </xsl:template>

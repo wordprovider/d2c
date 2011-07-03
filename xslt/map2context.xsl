@@ -14,7 +14,7 @@
 <xsl:include href="headings.xsl"/>
 
 
-<xsl:strip-space elements="*"/>
+<!-- <xsl:strip-space elements="*"/> -->
 
 <xsl:template match="bookmap">
   <!-- Initial setup -->
