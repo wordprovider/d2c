@@ -57,15 +57,6 @@
   must be styled differently.
 -->
 
-<!--
-<xsl:template match="uicontrol" mode="menucascade-x">
-  <xsl:text> {\bf </xsl:text><xsl:apply-templates/><xsl:text>} </xsl:text> 
-  <xsl:if test="position()&lt;last()">
-    <xsl:text> \wpMenuSeparator </xsl:text>
-  </xsl:if>
-</xsl:template>
--->
-
 <xsl:template match="uicontrol" mode="menucascade">
   <xsl:choose>
     <xsl:when test="position()&lt;last()">
