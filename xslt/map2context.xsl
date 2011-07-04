@@ -22,9 +22,6 @@
 \input input/setup.tex
 \starttext
 
-  <!-- Title page -->
-  <xsl:apply-templates select="booktitle"/>
-
   <!-- Frontmatter -->
   <xsl:apply-templates select="frontmatter"/>
 
@@ -34,6 +31,7 @@
    -->
   <xsl:call-template name="bodytext"/>
 
+\completeindex
 \stoptext
 
 </xsl:template>
