@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DITAMAP="orm/en/ope_bookmap_root.ditamap"
+DITAMAP="../orm/en/ope_bookmap_root.ditamap"
 OUTPUT="output/out.tex"
 XSLT="xslt/map2context.xsl"
 
