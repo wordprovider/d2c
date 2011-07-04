@@ -12,6 +12,7 @@
 <xsl:include href="body.xsl"/>
 <xsl:include href="prolog.xsl"/>
 <xsl:include href="headings.xsl"/>
+<xsl:strip-space elements="*"/>
 
 
 <!-- <xsl:strip-space elements="*"/> -->

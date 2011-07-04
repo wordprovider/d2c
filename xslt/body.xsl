@@ -56,16 +56,15 @@
   Qualify with mode="menucascade" because there are none-menu uicontrols which
   must be styled differently.
 -->
-<xsl:template match="uicontrol" mode="menucascade">
+
+<!--
+<xsl:template match="uicontrol" mode="menucascade-x">
   <xsl:text> {\bf </xsl:text><xsl:apply-templates/><xsl:text>} </xsl:text> 
   <xsl:if test="position()&lt;last()">
     <xsl:text> \wpMenuSeparator </xsl:text>
   </xsl:if>
 </xsl:template>
-
-<!--
-
-Tried to implement the menu with TeX commands:
+-->
 
 <xsl:template match="uicontrol" mode="menucascade">
   <xsl:choose>
@@ -73,11 +72,10 @@ Tried to implement the menu with TeX commands:
 \wpMenuItem {<xsl:apply-templates/>}<xsl:text/>
     </xsl:when>
     <xsl:otherwise>
-\wpMenuItemLast {<xsl:apply-templates/>} <xsl:value-of select="$newline"/> 
+\wpMenuItemLast {<xsl:apply-templates/>} 
     </xsl:otherwise>
   </xsl:choose> 
-</xsl:template>>
+</xsl:template>
 
--->
 
 </xsl:stylesheet>

@@ -49,9 +49,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Menus [ eg. File > Utilities > Import ]
+%
+% \wpMenuItem {Foo} gives "Foo > "
+% \wp_MenuItemLast {Foo} gives "Foo"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\wpMenuSeparator{ > } 
-
-\def\wpMenuItem#1\bf{#1 \type{>}}  
-\def\wpMenuItemLast#1\bf{#1}
+\def\wpMenuItem#1%
+  {{\bf #1  > }}  
+\def\wpMenuItemLast#1%
+   {{\bf #1 }}
