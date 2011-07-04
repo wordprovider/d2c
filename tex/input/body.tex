@@ -59,8 +59,24 @@
 \def\wpMenuItemLast#1%
    {{\bf #1}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Step lists in tasks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \def\wpSteps%
   {\startitemize[n]}
 
 \def\wpStepsEnd%
   {\stopitemize}
+
+\def\wpStep{}
+\def\wpStepEnd{}
+
+\def\wpCmd#1%
+  {\head #1}
+
+\def\wpInfo#1%
+  {\crlf #1}
+
+\def\wpStepResult#1%
+  {\crlf \crlf #1}

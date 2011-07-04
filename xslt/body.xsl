@@ -6,7 +6,6 @@
 
 <xsl:output method="text" indent="no"/>
 
-
 <xsl:template name="bodytext">
 
 \startbodymatter
@@ -68,5 +67,29 @@
   </xsl:choose> 
 </xsl:template>
 
+<!-- Step lists in tasks -->
+
+<xsl:template match="steps">
+\wpSteps
+<xsl:apply-templates select="step"/>
+\wpStepsEnd
+</xsl:template>
+
+<xsl:template match="step">
+\wpStep <xsl:apply-templates/>
+\wpStepEnd
+</xsl:template>
+
+<xsl:template match="cmd">
+\wpCmd <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="info">
+\wpInfo <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="stepresult">
+\wpStepResult <xsl:apply-templates/>
+</xsl:template>
 
 </xsl:stylesheet>
