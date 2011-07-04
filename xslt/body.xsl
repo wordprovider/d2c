@@ -95,19 +95,24 @@
 <!-- Choicetables in tasks -->
 
 <xsl:template match="choicetable">
-\wpChoiceTable
-<xsl:apply-templates/>
-\wpChoiceTableEnd
+<!-- The space below this line is necessary! -->
+
+\starttabulate[|l|l|]
+\HC
+\NC header1 \NC header2 \NC 
+\HC
+\NC row1 \NC row2 \NC \NR
+\stoptabulate  
 </xsl:template>
 
 <xsl:template match="chhead">
-\wpChoiceTableHeaderOption <xsl:value-of select="choptionhd"/>
-\wpChoiceTableHeaderDesc <xsl:value-of select="chdeschd"/>
+\HC
+\NC \bf {<xsl:value-of select="choptionhd"/>} \NC \bf {<xsl:value-of select="chdeschd"/>} \NC
+\HC
 </xsl:template>
 
 <xsl:template match="chrow">
-\wpChoiceTableRowOption <xsl:value-of select="choption"/>
-\wpChoiceTableRowDesc <xsl:value-of select="chdesc"/>
+\NC <xsl:value-of select="choption"/> \NC <xsl:value-of select="chdesc"/> \NC
 </xsl:template>
 
 </xsl:stylesheet>
