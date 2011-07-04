@@ -80,3 +80,29 @@
 
 \def\wpStepResult#1%
   {\crlf \crlf #1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Choicetables
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\wpChoiceTable%
+  {\starttabulate[l|l]}
+
+\def\wpChoiceTableEnd%
+  {\stoptabulate}
+
+\def\wpChoiceTableHeaderOption#1%
+  {\HL
+   \NC \bf #1 \NC 
+  }
+
+\def\wpChoiceTableHeaderDesc#1%
+  {\bf #1 \NC \NR
+   \HL}
+
+\def\wpChoiceTableRowOption#1%
+  {\NC #1 \NC }
+
+\def\wpChoiceTableRowDesc#1 
+  {#1 \NC \NR}

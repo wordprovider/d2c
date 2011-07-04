@@ -92,4 +92,23 @@
 \wpStepResult <xsl:apply-templates/>
 </xsl:template>
 
+<!-- Choicetables in tasks -->
+
+<xsl:template match="choicetable">
+\wpChoiceTable
+<xsl:apply-templates/>
+\wpChoiceTableEnd
+</xsl:template>
+
+<xsl:template match="chhead">
+\wpChoiceTableHeaderOption <xsl:value-of select="choptionhd"/>
+\wpChoiceTableHeaderDesc <xsl:value-of select="chdeschd"/>
+</xsl:template>
+
+<xsl:template match="chrow">
+\wpChoiceTableRowOption <xsl:value-of select="choption"/>
+\wpChoiceTableRowDesc <xsl:value-of select="chdesc"/>
+</xsl:template>
+
 </xsl:stylesheet>
+
