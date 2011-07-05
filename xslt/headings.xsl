@@ -51,7 +51,7 @@
 <xsl:template match="topichead">
   <xsl:param name="level"/>
 
-\HeadingLevel<xsl:number value="$level" format="I"/> <xsl:text> </xsl:text> <xsl:value-of select="@navtitle"/>  
+\wpHeadingLevel<xsl:number value="$level" format="I"/> <xsl:text> </xsl:text> <xsl:value-of select="@navtitle"/>  
 
   <xsl:apply-templates select="topicref | topichead">
     <xsl:with-param name="level" select="$level+1"/>
@@ -80,7 +80,7 @@
 <xsl:template match="concept">
   <xsl:param name="level"/>
   
-\HeadingLevel<xsl:number value="$level" format="I"/> <xsl:text> </xsl:text> <xsl:value-of select="title"/> 
+\wpHeadingLevel<xsl:number value="$level" format="I"/> <xsl:text> </xsl:text> <xsl:value-of select="title"/> 
 
   <xsl:apply-templates select="prolog"/>
   <xsl:apply-templates select="conbody"/>
@@ -90,7 +90,7 @@
 <xsl:template match="task">
   <xsl:param name="level"/>
   
-\HeadingTask <xsl:text> </xsl:text> <xsl:value-of select="title"/>
+\wpHeadingTask <xsl:text> </xsl:text> <xsl:value-of select="title"/>
 
   <xsl:apply-templates select="prolog"/>
   <xsl:apply-templates select="taskbody"/>

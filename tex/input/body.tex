@@ -6,13 +6,18 @@
 \setuppagenumbering [
                       state=start,
                       location={footer,middle},
-                      conversion=numbers
+                      conversion=numbers,
+                      alternative=singlesided
                     ]
 
 \setuppagenumber [
                    number=1
                  ] 
 
+
+ 
+
+\setupheadertexts[\hfill \vbox{\wpProductName \vskip5pt \wpGuideTitle}][\hfill \vbox{piss \vskip5pt shit}]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Headings
@@ -24,6 +29,7 @@
   {\framed[frame=off,bottomframe=on,topframe=on]
      {\vbox{\headtext{chapter} #1\blank#2}}} % \vbox is needed for \blank to work
 
+
 \setuphead[chapter][command=\wpChapterTitle, style={\ss\bfa}]
 
 \setupheadtext[chapter=Chapter] % used by \headtext
@@ -32,20 +38,20 @@
 
 
 
-\definehead[HeadingLevelI][subject]
+\definehead[wpHeadingLevelI][subject]
 
-\setuphead [HeadingLevelI]
+\setuphead [wpHeadingLevelI]
            [
             page=yes,continue=yes
            ]
 
 
 
-\definehead[HeadingLevelII][subsubject]
-\definehead[HeadingLevelIII][subsubject]
-\definehead[HeadingLevelIV][subsubject]
-\definehead[HeadingLevelV][subsubject]
-\definehead[HeadingTask][subsubject]
+\definehead[wpHeadingLevelII][subsubject]
+\definehead[wpHeadingLevelIII][subsubject]
+\definehead[wpHeadingLevelIV][subsubject]
+\definehead[wpHeadingLevelV][subsubject]
+\definehead[wpHeadingTask][subsubject]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Menus [ eg. File > Utilities > Import ]
