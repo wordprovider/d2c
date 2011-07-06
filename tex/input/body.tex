@@ -3,21 +3,22 @@
 % Page numbering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setuppagenumbering [
-                      state=start,
-                      location={footer,middle},
-                      conversion=numbers,
-                      alternative=singlesided
-                    ]
+%\setuppagenumbering [
+%                      state=start,
+%                      location={footer,middle},
+%                      conversion=numbers,
+%                      alternative=singlesided
+%                    ]
 
 \setuppagenumber [
-                   number=1
+                   number=2
                  ] 
 
+\def\wpHeader%
+  {\lbox{bollocks \vskip2pt tits} \externalfigure[pagenum.png] }
 
- 
-
-\setupheadertexts[\hfill \vbox{\wpProductName \vskip5pt \wpGuideTitle}][\hfill \vbox{piss \vskip5pt shit}]
+\setupheadertexts[][\wpHeader][\wpHeader][]
+%\setupheadertexts[\vbox{\wpProductName \vskip5pt \wpideTitle}][\vbox{piss \vskip5pt shit}]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Headings
