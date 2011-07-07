@@ -4,14 +4,30 @@
 %\frame[background={titlepagelogo}]{Hello there!}
 
 \page
-\dontleavehmode
 \blank[6cm]
-\startalignment[center]
-\externalfigure[pagenum.png]
+\startalignment[left]
+
+\useexternalfigure[efChapterPage][/home/glynn/d2c/tex/teximages/chapterpage.png]
+
+\defineoverlay[olChapterPage][{\externalfigure[efChapterPage][width=3cm,height=3cm]}]
+
+\showboxes
+\setbox0=\rbox{  \hskip2cm Chapter \vskip2cm }
+\setbox1=\rbox{   \framed[background=olChapterPage,height=4cm,width=4cm]{fuckery}}
+\rbox{\hbox{ \hbox to 7cm{\box0 } \vtop{\box1}} \hrule \kap{\wpChapterHeadingText}}
+
+
+%\setbox0=\rbox{  Chapter \blank[5cm] }
+%\setbox1=\rbox{\externalfigure[efChapterPage]}
+%\rbox{\hbox{ \hbox to 7cm{\box0 } \vtop{\box1}} \hrule \kap{\wpChapterHeadingText}}
+
+
+%\hbox{\vbox{Chapter \vskip3pt \wpChapterHeadingText} \vbox{\externalfigure[chapterpage.png]} \hfill}
+%\externalfigure[pagenum.png]
 %\hbox{\vtop{\wpChapterHeadingText \vskip2pt below} \externalfigure[pagenum.png]} }
-\ssd \wpChapterHeadingText \par
+%\ssd \wpChapterHeadingText \par
 \blank[4cm]
 \blank[1cm]
 \stopalignment
-\page
+
 
