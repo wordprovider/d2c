@@ -10,6 +10,7 @@
 <!--    
    These transforms build the hierarchy of levels.
    \Chapter is the root level.
+   We can implement chapters as headings or as separate pages.
    Concepts and topichead headings are formatted according to their level.
    Tasks always have the same heading.
    This is implemented in body.tex as \HeadingLevelI, HeadingLevelII..., HeadingTask.
@@ -33,10 +34,30 @@
 
 -->
 
-<!-- Add the chapter headings then look for topicrefs|topicheads beneath them. -->
+<!-- Add the chapter headings then look for topicrefs|topicheads beneath them.
+     A chapter "heading" can in fact be a separate chapter page.
+ -->
 <xsl:template match="chapter">
 
-\chapter{<xsl:value-of select="@navtitle"/>}  
+  <!-- 
+      Chapter as separate page.
+      ========================
+  -->
+  
+  <!-- Set up the chapter title -->
+\def\wpChapterHeadingText{<xsl:value-of select="@navtitle"/>}
+
+  <!-- Build the chapter page! -->
+\input input/chapterpage.tex
+
+  <!--
+     Chapter as heading.
+     ==================
+  -->
+
+<!-- \chapter{<xsl:value-of select="@navtitle"/>} --> 
+
+  <!-- Start building the hierarchy below the chapters --> 
 
   <xsl:apply-templates select="topicref | topichead"> 
     <xsl:with-param name="level" select="1"/>
