@@ -13,15 +13,17 @@
 %\showboxes
 %\switchtobodyfont[big]
 \definefont[bfChapter][SerifBold at 48pt]
-\definefont[bfChapterNumber][SerifBold at 48pt]
-\definefont[bfChapterBig][SerifBold at 50pt]
-\def\wpChapterHeader{\bfChapter \color[OrmetisOrange] {Chapter \llap{\bfChapterBig\OrmetisGrey  Chapter}}}
+\definefont[bfChapterNumber][SerifBold at 60pt]
+\definefont[bfChapterBig][Serif at 48pt]
+\definefont[bfChapterTitle][SansBold at 40pt]
+\def\wpChapterHeader{\bfChapter \color[OrmetisOrange] {Chapter}}
 \def\wpChapterNumber{\bfChapterNumber \color[OrmetisGrey] {1}}
+
 \setbox0=\rbox{\wpChapterHeader \vskip0.5cm}
 \setbox1=\rbox{\framed[background=olChapterPage,height=4cm,width=4cm,frame=off]{\hskip2.8cm \vskip0.3cm \wpChapterNumber}}
 \rbox{\hbox{ \hbox to 8cm{\box0 } \vtop{\box1}} 
 
-\hskip0.4cm \hrule \vskip0.4cm  \tfb \ss \kap{\wpChapterHeadingText}}
+\hskip0.4cm \hrule \vskip0.4cm  \tfb  \bfChapterTitle \color[OrmetisGrey] \kap{\wpChapterHeadingText}}
 
 
 %\setbox0=\rbox{  Chapter \blank[5cm] }
