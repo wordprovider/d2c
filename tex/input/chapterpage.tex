@@ -10,14 +10,15 @@
 \useexternalfigure[efChapterPage][/home/glynn/d2c/tex/teximages/chapterpage.png]
 
 \defineoverlay[olChapterPage][{\externalfigure[efChapterPage][width=4cm,height=4cm]}]
-\showboxes
+%\showboxes
 %\switchtobodyfont[big]
 \definefont[bfChapter][SerifBold at 48pt]
 \definefont[bfChapterNumber][SerifBold at 48pt]
-\def\wpChapterHeader{\bfChapter \color[OrmetisOrange] {Chapter}}
-\def\wpChapterNumber{\bfChapterNumber \color[OrmetisOrange] { 1}}
+\definefont[bfChapterBig][SerifBold at 50pt]
+\def\wpChapterHeader{\bfChapter \color[OrmetisOrange] {Chapter \llap{\bfChapterBig\OrmetisGrey  Chapter}}}
+\def\wpChapterNumber{\bfChapterNumber \color[OrmetisGrey] {1}}
 \setbox0=\rbox{\wpChapterHeader \vskip0.5cm}
-\setbox1=\rbox{\framed[background=olChapterPage,height=4cm,width=4cm,frame=off]{\hskip2.8cm \vskip0.3cm \wpChapterNumber    }}
+\setbox1=\rbox{\framed[background=olChapterPage,height=4cm,width=4cm,frame=off]{\hskip2.8cm \vskip0.3cm \wpChapterNumber}}
 \rbox{\hbox{ \hbox to 8cm{\box0 } \vtop{\box1}} 
 
 \hskip0.4cm \hrule \vskip0.4cm  \tfb \ss \kap{\wpChapterHeadingText}}
