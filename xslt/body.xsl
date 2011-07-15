@@ -134,58 +134,15 @@
 
 <xsl:template match="image">
   <xsl:choose>
-    <xsl:when test="@placement='break'">
-<!-- 
-      <xsl:value-of select="$newline"/>
-      <xsl:text>\placefigure</xsl:text>
-      <xsl:value-of select="$newline"/>
-      <xsl:text>  [fig:</xsl:text><xsl:value-of select="@id"/><xsl:text>]</xsl:text>
-      <xsl:value-of select="$newline"/>
-      <xsl:text>  [here,force]</xsl:text> 
-      <xsl:value-of select="$newline"/>
-      <xsl:text>  [width=4cm] </xsl:text>
-      <xsl:value-of select="$newline"/>
-      <xsl:text>  [height=4cm] </xsl:text>
-      <xsl:value-of select="$newline"/>
-      <xsl:text>  {none}</xsl:text>
-      <xsl:value-of select="$newline"/>
-      <xsl:text>  {\externalfigure[</xsl:text><xsl:value-of select="@href"/><xsl:text>]}</xsl:text>
--->
 
-      <xsl:value-of select="$newline"/>
-      <xsl:text>\useexternalfigure [</xsl:text>
-      <xsl:value-of select="@id"/>
-      <xsl:text>]</xsl:text>
-      <xsl:text> [</xsl:text>
-      <xsl:value-of select="@href"/>
-      <xsl:text>]</xsl:text>
-      <xsl:text> [height=</xsl:text>
-      <xsl:value-of select="format-number(@height,'##.00')*number($pxtocm)"/>
-      <xsl:text>cm,width=</xsl:text>
-      <xsl:value-of select="format-number(@width,'##.00')*number($pxtocm)"/>
-      <xsl:text>cm]</xsl:text>
-      <!-- ,scale=0.8]</xsl:text>  -->
-      <!-- <xsl:value-of select="number(@scale)/100"/>
-      <xsl:text>,frame=on]</xsl:text> -->
-      <xsl:value-of select="$newline"/>
-      <xsl:text>\externalfigure [</xsl:text>
-      <xsl:value-of select="@id"/>
-      <xsl:text>]</xsl:text>
-    
+    <xsl:when test="@placement='break'">
     </xsl:when>
     <xsl:otherwise>
 
-      <!--
-        hbox {\externalfigure[<figure-file>]}
-      -->
-      
-      <xsl:text> \hbox </xsl:text>
-      <xsl:text>  {\externalfigure[</xsl:text><xsl:value-of select="@href"/><xsl:text>]}</xsl:text>
-      <!-- <xsl:text>  [left,force]</xsl:text> -->
-    </xsl:otherwise>
+    <xsl:text> \wpImageInline {</xsl:text><xsl:value-of select="@href"/><xsl:text>}</xsl:text> 
+    
+   </xsl:otherwise>
   </xsl:choose>
-  <!-- <xsl:text>  {\externalfigure[</xsl:text><xsl:value-of select="@id"/><xsl:text>]}</xsl:text> -->
-  <xsl:value-of select="$newline"/>
 </xsl:template>
 
 <!-- *** End images *** -->
