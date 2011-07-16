@@ -66,7 +66,15 @@
 \def\wpMenuItemLast#1%
    {{\bf #1}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+% Non-menu uicontrols
+%
+% \wpUIControl {New}
+%%%%%%%%%%%%%%%%%%%%
+
+\def\wpUIControl#1%
+  {{\bf #1}}
+
 % Step lists in tasks
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -122,6 +130,26 @@
 
 % Inline images
 
-\def\wpImageInline#1%
-  {\hbox {\externalfigure[#1]}}
+%\def\wpImageInline#1%
+%  {\hbox {\externalfigure[#1]}}
 
+\def\wpImageInline#1%
+  {
+    \hbox { bib/ble }
+  }
+
+%\def\wpImageInline#1%
+%  {
+%    \useexternalfigure[bibble][btn-ormetis]
+%    \externalfigure[btn-ormetis]
+%    \hbox { one }
+%    \hbox { two }
+%    \hbox { hello }
+%  }
+
+%\define[1]\wpImageInline
+%  {
+%    \useexternalfigure[bibble][#1]
+%    \externalfigure[#1]
+%    \hbox { #1 } 
+%  }

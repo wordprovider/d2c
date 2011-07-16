@@ -52,20 +52,60 @@
 </xsl:template>
 
 <!--  
-  Qualify with mode="menucascade" because there are none-menu uicontrols which
-  must be styled differently.
+  Qualify the uicontrols with mode="menucascade" because there are none-menu 
+  uicontrols which should be treated separately.
 -->
 
 <xsl:template match="uicontrol" mode="menucascade">
   <xsl:choose>
     <xsl:when test="position()&lt;last()">
-\wpMenuItem {<xsl:apply-templates/>}<xsl:text/>
+
+      <!-- 
+         Menu items before the last item.
+         Example result:
+         \wpMenuItem {File}
+      -->
+      <xsl:text>\wpMenuItem {</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    
     </xsl:when>
     <xsl:otherwise>
-\wpMenuItemLast {<xsl:apply-templates/>} 
+      
+      <!-- 
+         The last menu item.
+         Example result:
+         \wpMenuItemLast {Options}
+      -->
+      <xsl:text>\wpMenuItemLast {</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+    
     </xsl:otherwise>
   </xsl:choose> 
 </xsl:template>
+
+
+<!--
+    *******************
+    Non-menu uicontrols 
+    *******************
+-->
+
+<xsl:template match="uicontrol">
+
+   <!-- 
+      Example result:
+      \wpUIControl {New}
+   -->
+  <xsl:text>\wpUIControl {</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text> 
+
+</xsl:template>
+
+<!--
+    *********************** 
+    End non-menu uicontrols 
+    ***********************  
+-->
+
+
+
 
 <!-- Step lists in tasks -->
 
@@ -138,9 +178,12 @@
     <xsl:when test="@placement='break'">
     </xsl:when>
     <xsl:otherwise>
-
-    <xsl:text> \wpImageInline {</xsl:text><xsl:value-of select="@href"/><xsl:text>}</xsl:text> 
-    
+    <!--
+        If placement isn't 'break' it's 'inline'.
+        Example result:
+        \wpImageInline {images/ormetis_btn.png}
+     -->
+     <xsl:text> \wpImageInline {</xsl:text><xsl:value-of select="@href"/><xsl:text>}</xsl:text> 
    </xsl:otherwise>
   </xsl:choose>
 </xsl:template>
