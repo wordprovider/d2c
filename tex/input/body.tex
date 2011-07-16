@@ -91,10 +91,10 @@
   {\head #1}
 
 \def\wpInfo#1%
-  {\crlf #1}
+  {\crlf \crlf #1}
 
 \def\wpStepResult#1%
-  {\crlf \crlf #1}
+  {\crlf \crlf  #1}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,3 +153,10 @@
 %    \externalfigure[#1]
 %    \hbox { #1 } 
 %  }
+
+%%%%%%%%%%%%%%
+% systemoutput
+%%%%%%%%%%%%%%
+
+\def\wpSystemOutput#1%
+  {{\ss #1}}

@@ -190,4 +190,22 @@
 
 <!-- *** End images *** -->
 
+<!--
+    ************
+    systemoutput
+    ************
+-->
+
+<xsl:template match="systemoutput">
+
+  <!-- 
+     Example output:
+     \wpSystemOutput {Scenario(2)}
+  -->
+
+  <xsl:text>\wpSystemOutput{</xsl:text><xsl:apply-templates/><xsl:text>}</xsl:text>
+
+</xsl:template>
+  
+
 </xsl:stylesheet>
