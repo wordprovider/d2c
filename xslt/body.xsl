@@ -141,12 +141,12 @@
 <xsl:template match="choicetable">
 <!-- The space below this line is necessary! -->
 
-\starttabulate[|l|l|]
-\HC
-\NC header1 \NC header2 \NC 
-\HC
-\NC row1 \NC row2 \NC \NR
-\stoptabulate  
+\starttable[|l|l|]
+\HL
+\VL header1 \VL header2 \VL \NR
+\HL
+\VL row1 \VL row2 \VL \NR
+\stoptable
 </xsl:template>
 
 <xsl:template match="chhead">
